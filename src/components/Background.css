@@ -1,0 +1,24 @@
+.bg-animate {
+    animation: bg-animate 8s infinite alternate-reverse;
+}
+
+@keyframes bg-animate {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        background-color: #cc701a;
+    }
+}
+.bg-animate1 {
+    animation: bg-animate1 5s infinite alternate-reverse;
+}
+
+@keyframes bg-animate1 {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        background-color: #11bdbd;
+    }
+}
