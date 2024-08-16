@@ -89,12 +89,15 @@ export default function QuoteForm() {
     return (
         <>
             <div className="relative">
-                <div className="h-[100vh] w-full bg-gray-200 absolute top-0 -z-10" />
+                <img
+                    className="h-[100vh] w-full bg-gray-200 absolute object-cover top-0 -z-10"
+                    src="https://img.freepik.com/darmowe-zdjecie/profesjonalny-aparat-cyfrowy-i-akcesoria-ulozone-na-zielonym-tle_23-2148038903.jpg?t=st=1723807384~exp=1723810984~hmac=e2ac5f53d23b4b8026aa5752ea537880404d2cfbf2e00aabd899da7d7930220c&w=1380"
+                />
                 <h1 className="text-4xl text-black font-semibold tracking-wider py-8 text-center lg:py-24">
                     Zapytanie o <strong>rezerwacje</strong>
                 </h1>
             </div>
-            <div className="w-full mx-auto border py-12 rounded-t-2xl bg-white anim-bg-y-100">
+            <div className="w-full mx-auto border py-12 rounded-t-2xl bg-white/80 backdrop-blur-xl anim-bg-y-100">
                 <form
                     onSubmit={handleSubmit}
                     className="space-y-4 max-w-screen-md  mx-auto px-6 pb-12 anim-opacity"
