@@ -1,0 +1,11 @@
+.anim-bg-y-100 {
+    animation: anim-bg-y-100 .6s;
+}
+@keyframes anim-bg-y-100 {
+    from {
+        transform: translateY(140%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

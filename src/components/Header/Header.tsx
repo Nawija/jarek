@@ -38,7 +38,7 @@ export default function Header() {
         <header
             className={`w-full z-[998] border-b transition-colors duration-300 sticky top-0 ${
                 isScrolled || showMenu
-                    ? "border-border-primary backdrop-blur-md bg-background-primary"
+                    ? "backdrop-blur-md bg-white/60"
                     : "border-transparent"
             }`}
         >
@@ -61,7 +61,7 @@ export default function Header() {
                             <Link
                                 href={link.href}
                                 onClick={closeMenu}
-                                className="capitalize font-medium text-lg lg:text-sm hover:text-foreground-primary transition-colors"
+                                className="capitalize font-medium text-lg lg:text-sm hover:text-yellow-600 transition-colors"
                             >
                                 {link.label}
                             </Link>
@@ -82,7 +82,7 @@ export default function Header() {
 function ButtonsNav({ closeMenu }: { closeMenu: () => void }) {
     return (
         <>
-            <Link href="/" onClick={closeMenu}>
+            <Link href="/rezerwacja" onClick={closeMenu}>
                 <MainBtn>Rezerwacja</MainBtn>
             </Link>
             <Link href="/" onClick={closeMenu}>
