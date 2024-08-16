@@ -16,15 +16,8 @@ export default function Logo({
             onClick={closeMenu}
             className="flex items-center justify-center"
         >
-            <Image
-                src="/logo.svg"
-                alt="logo seovileo"
-                className="mr-1.5"
-                height={h || 25}
-                width={w || 25}
-            />
-            <p className="text-xs lg:text-sm font-semibold text-foreground-primary flex">
-                Seovileo
+            <p className="text-base tracking-wide lg:text-xl font-semibold flex">
+                Jarek Olszewski
             </p>
         </Link>
     );

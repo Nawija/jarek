@@ -1,13 +1,19 @@
 "use client";
 
-import { NAVIGATION_LINKS } from "@/constants/routers";
 import Logo from "./Logo";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MainBtn } from "../Buttons/MainBtn";
 import { SecondBtn } from "../Buttons/SecondBtn";
 
-export default function Nav() {
+const NAVIGATION_LINKS = [
+    { label: "home", href: "/" },
+    { label: "about", href: "/about" },
+    { label: "services", href: "/services" },
+    { label: "contact", href: "/contact" },
+];
+
+export default function Header() {
     const [showMenu, setShowMenu] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -48,7 +54,7 @@ export default function Nav() {
                         showMenu
                             ? "translate-x-0"
                             : " -translate-x-full lg:-translate-x-1/2"
-                    } absolute border-b lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 border-border-primary transition-transform top-full left-0 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-max p-10 lg:p-0 lg:py-1 w-full flex items-center lg:border lg:bg-background-secondary lg:px-3 lg:rounded-xl justify-center flex-col lg:flex-row bg-background-primary`}
+                    } absolute border-b lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 border-border-primary transition-transform top-full left-0 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-max p-10 lg:p-0 lg:py-1 w-full flex items-center lg:border lg:px-3 lg:rounded-xl justify-center flex-col lg:flex-row bg-white`}
                 >
                     {NAVIGATION_LINKS.map((link, index) => (
                         <li key={index}>
@@ -57,28 +63,30 @@ export default function Nav() {
                                 onClick={closeMenu}
                                 className="capitalize font-medium text-lg lg:text-sm hover:text-foreground-primary transition-colors"
                             >
-                                {link.name}
+                                {link.label}
                             </Link>
                         </li>
                     ))}
                     <div className="lg:hidden flex items-center justify-center flex-wrap gap-3 pt-8">
-                        <ButtonsNav />
+                        <ButtonsNav closeMenu={closeMenu} />
                     </div>
                 </ul>
                 <div className="hidden lg:flex space-x-2">
-                    <ButtonsNav />
+                    <ButtonsNav closeMenu={closeMenu} />
                 </div>
             </nav>
         </header>
     );
 }
 
-function ButtonsNav() {
+function ButtonsNav({ closeMenu }: { closeMenu: () => void }) {
     return (
         <>
-            <MainBtn>Gallery</MainBtn>
-            <Link href="/free-quote">
-                <SecondBtn>Free Quote</SecondBtn>
+            <Link href="/" onClick={closeMenu}>
+                <MainBtn>Rezerwacja</MainBtn>
+            </Link>
+            <Link href="/" onClick={closeMenu}>
+                <SecondBtn>Wycena</SecondBtn>
             </Link>
         </>
     );
@@ -99,17 +107,17 @@ function BurgerMenu({
             <div
                 className={`${
                     showMenu ? "rotate-[405deg] translate-y-1" : ""
-                } w-4 h-[2px] transition-transform bg-foreground-primary rounded-3xl`}
+                } w-4 h-[2px] transition-transform bg-black rounded-3xl`}
             />
             <div
                 className={`${
                     showMenu ? "opacity-0" : ""
-                } w-3 h-[2px] transition-opacity bg-foreground-primary rounded-3xl`}
+                } w-3 h-[2px] transition-opacity bg-black rounded-3xl`}
             />
             <div
                 className={`${
                     showMenu ? "-rotate-45 -translate-y-2" : ""
-                } w-4 h-[2px] transition-transform bg-foreground-primary rounded-3xl`}
+                } w-4 h-[2px] transition-transform bg-black rounded-3xl`}
             />
         </button>
     );
